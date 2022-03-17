@@ -1,28 +1,23 @@
 name: golangci-lint
 
 on:
+  pull_request:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+
 
 jobs:
   golangci:
     timeout-minutes: 60
-    strategy:
-      matrix:
-        go-version: [1.17.x]
-        os: [ubuntu-18.04]
-        
-    name: lint
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    name: Golangci Lint
+
     steps:
-      - uses: actions/setup-go@v2
       - uses: actions/checkout@v2
-      - name: golangci-lint
         uses: golangci/golangci-lint-action@v2
         with:
           version: v1.40.1
           args: --timeout 10m0s
+    
+
