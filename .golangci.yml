@@ -1,9 +1,9 @@
-run:
+run: 
   deadline: 10m
 
 output:
-  format: json
-  sort-results: true
+   format: json
+   sort-results: true
 
 linters:
   enable:
@@ -11,24 +11,31 @@ linters:
 
 issues:
   exclude-rules:
-    - path: _test\.go
-      linters:
-        - errcheck
-    - linters:
-        - lll
-          source: "^//go:generate"
-    - linters:
-        - staticcheck
-        text: "SA9003:"
+  - path: _test\.go
+    linters:
+      - errcheck
+  - linters:
+    - lll
+    source: "^//go:generate "
+  - linters:
+    - staticcheck
+    text: "SA9003:"
 
 linters-settings:
   errcheck:
     check-type-assertions: true
     check-blank: true
   lll:
+  # Max line length, lines longer will be reported.
+  # '\t' is counted as 1 character by default, and can be changed with the tab-width option.
     line-length: 120
+  # Tab width in spaces.
     tab-width: 1
   maintidx:
+  # Show functions with maintainability index lower than N.
+  # A high index indicates better maintainability (it's kind of the opposite of complexity).
     under: 100
   maligned:
+  # Print struct with more effective memory layout or not.
+  # Default: false
     suggest-new: true
