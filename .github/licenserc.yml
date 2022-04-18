@@ -1,0 +1,14 @@
+header:
+  license:
+    spdx-id: Apache-2.0
+    copyright-owner: Wang Lei
+  paths-ignore:
+    - 'docs/'
+    - '.gitignore'
+    - '.gitatrributes'
+    - '**/*.md'
+    - '.github/'
+    - 'LICENSE'
+    - '.codecov.yml'
+    - '.circleci/'
+  comment: on-failure
