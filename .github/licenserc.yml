@@ -5,10 +5,13 @@ header:
   paths-ignore:
     - 'docs/'
     - '.gitignore'
+    - '.golangci.yml'
     - '.gitatrributes'
     - '**/*.md'
     - '.github/'
     - 'LICENSE'
     - '.codecov.yml'
     - '.circleci/'
+    - '**/go.mod'
+    - '**/go.sum'
   comment: on-failure
